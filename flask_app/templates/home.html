@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HCI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">HCI</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">Virtual Mouse</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#service">Virtual Paint</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#sign">Snake Game</a>
+                  </li>
+                </ul>
+                <!-- <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success text-dark" type="submit">Search</button>
+                </form> -->
+              </div>
+            </div>
+          </nav>
+
+          <div class='mid'>
+            <video autoplay muted loop>
+                <source class="embed-responsive" src = "{{ url_for('static', filename='im.mp4') }}" type="video/mp4">
+            </video>
+            <div class="hero text-center">
+                <h2 class="text-light display-4 font-weight-bold ">Mouse-free Applications</h2>
+                <p class="text-light mx-auto">Too lazy to use your mouse?</p>
+                <!-- <a class="text-dark" href="account.html">Get Started</a> -->
+            </div>
+
+          </div>
+    </header>
+
+    <section id="about" class="about pt-5 pb-2">
+        <div class="row align-items-center container my-5 mx-auto ">
+            <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
+                <h2>Virtual Mouse</h2>
+                <p>Move your index finger to move the cursor. And to perform a click lift both the index & middle fingers & bring them close to each other.</p>
+                <form action="virtual_mouse" method="get">
+                    <button class="btn btn-primary" type="submit">Use the Virtual mouse</button>
+                </form>
+            </div>
+            <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
+                <img class="img-fluid" src="{{ url_for('static', filename='1.svg') }}" >
+
+            </div>
+        </div>
+         
+
+    </section>
+
+    <section id="service" class="service py-5">
+     <div class="col mx-auto align-items-center my-5">
+        <div class="heading text-center pt-0 ">
+          <h2 class="font-weight-bold pb-3 text-light">Virtual Paint</h2>
+          <form action="virtual_paint" method="get">
+            <button class="btn btn-warning" type="submit">Open Virtual Paint</button>
+        </form>
+        </div>
+        <div class="row mx-auto justify-content-center align-items-center text-center container pt-3">
+              <div class="one col-lg-3 col-md-3 col-12 w-25 m-2">
+                  <img class="img-fluid w-75" src="{{ url_for('static', filename='vp1.jpg') }}">
+                  <h5 class="font-weight-bold pt-4">Books</h5>
+                  <!-- <p>xxab</p> -->
+              </div>
+              <div class="one col-lg-3 col-md-3 col-12 w-25 m-2">
+                  <img class="img-fluid w-75" src="{{ url_for('static', filename='vp3.jpg') }}">
+                  <h5 class="font-weight-bold pt-4">Low Cost</h5>
+                  <!-- <p>Read books at low cost</p> -->
+              </div>
+              <div class="one col-lg-3 col-md-3 col-12 w-25 m-2">
+                  <img class="img-fluid w-75" src="{{ url_for('static', filename='vp2.jpg') }}">
+                  <h5 class="font-weight-bold pt-4">Abcdef</h5>
+                  <!-- <p>Many books are available</p> -->
+              </div>
+
+        </div>
+     </div>
+
+    </section>
+
+    <section id="sign" class="sign py-5">
+      <div class="row align-items-center container my-5 mx-auto ">
+          <div class="text col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
+              <h6>Games</h6>
+              <h2>Snake Game</h2>
+              <p>A library is a collection of materials, books or media that are easily accessible for use and not just for display purposes. It is responsible for housing updated information in order to meet the user's needs on a daily basis.</p>
+              <form action="snake_game" method="get">
+                <button class="btn btn-success" type="submit">Play the game</button>
+            </form>
+          </div>
+          <div class="img col-lg-6 col-md-6 col-12 w-50 pt-5 pb-5">
+              <img class="img-fluid" src="{{ url_for('static', filename='1.svg') }}" >
+
+          </div>
+      </div>
+  </section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+</body>
+</html>
